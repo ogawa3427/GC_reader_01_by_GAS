@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tile from "../components/Tile";
 import { format, addDays } from 'date-fns';
+import styles from './index.module.css';
 
 interface Event {
   title: string;
@@ -68,14 +69,14 @@ const Index = () => {
   });
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Upcoming Events</h1>
       {isLoading ? (
         <p>読み込み中...</p>
       ) : (
         <>
           {Object.entries(groupedEvents).map(([date, events]) => (
-            <div key={date}>
+            <div className={styles['events-group']} key={date}>
               <h2>{date}</h2>
               {events.length > 0 ? (
                 events.map((event, index) => (
@@ -87,7 +88,7 @@ const Index = () => {
             </div>
           ))}
           {ungroupedEvents.length > 0 && (
-            <div>
+            <div className={styles['events-group']}>
               <h2>未分類のイベント</h2>
               {ungroupedEvents.map((event, index) => (
                 <Tile key={index} title={event.title} start={event.startTime} end={event.endTime} />
