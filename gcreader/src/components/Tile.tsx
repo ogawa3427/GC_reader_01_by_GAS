@@ -19,7 +19,6 @@ const Tile: React.FC<TileProps> = ({ title, start, end }) => {
     return (
         <div style={{ 
             border: '1px solid #222',
-            borderRadius: '5px',
             padding: '10px',
             margin: '10px',
             backgroundColor: '#FEFEEFF',
