@@ -67,14 +67,16 @@ const Index = () => {
   });
 
   return (
-    <div className={styles.container}>
+    <div>
       <h1>Upcoming Events</h1>
+      <div  className={styles['events-container']}>
       {isLoading ? (
         <p>読み込み中...</p>
       ) : (
         <>
           {Object.entries(groupedEvents).map(([date, events]) => (
-            <div className={styles['events-group']} key={date}>
+            <div className={styles['events-group']} key={date}
+              style={{border: '1px solid #11AAFF', padding: '1px', margin: '1px', width: '100%', backgroundColor: '#AADDFF', borderRadius: '5px'}}>
               <h2>{date}</h2>
               {events.length > 0 ? (
                 events.map((event, index) => (
@@ -95,6 +97,7 @@ const Index = () => {
           )}
         </>
       )}
+    </div>
     </div>
   );
 };

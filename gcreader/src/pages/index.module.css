@@ -10,7 +10,7 @@
   }
   .events-group {
       flex: 1;
-      min-width: 110px; /* 各イベントグループの最小幅を設定 */
+      /*min-width: 110px; /* 各イベントグループの最小幅を設定 */
       padding: 10px;
   }
 }
