@@ -3,7 +3,9 @@ function doGet(e) {
   // アクセス可能なカレンダーのIDを指定して、Googleカレンダーを取得する
   let myCalendar = CalendarApp.getCalendarById(YOUR_CALENDAR_ID);
   let startDate = new Date();
+  startDate.setHours(0, 0, 0, 0);
   let endDate = new Date();
+  endDate.setHours(23, 59, 59, 999);
   endDate.setDate(startDate.getDate() + 7);
   let myEvents = myCalendar.getEvents(startDate, endDate);
 

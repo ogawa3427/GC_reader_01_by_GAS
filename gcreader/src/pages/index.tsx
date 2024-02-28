@@ -22,7 +22,6 @@ const Index = () => {
       setEvents(events);
       setIsLoading(false);
     }
-
     fetchEvents();
   }, []);
 
@@ -37,7 +36,6 @@ const Index = () => {
 
   // イベントを日付ごとにグループ化する関数
   const groupEventsByDate = (events: Event[]) => {
-    const timeZone = 'Asia/Tokyo'; // JSTのタイムゾーンを指定
     const grouped = events.reduce((acc, event) => {
       // UTCの日時をJSTに変換する必要がなくなったため、直接JSTで日時を扱う
       const eventDate = new Date(event.startTime);
